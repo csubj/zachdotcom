@@ -10,9 +10,7 @@ export default function Home() {
   return (
     <>
       <Meta />
-      <main className={styles.main}>
-        Zach Barner .... coming soon. 
-      </main>
+      <main className={styles.main}>Zach Barner .... coming soon.</main>
     </>
   );
 }
