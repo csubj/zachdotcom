@@ -1,37 +1,63 @@
-## Features
+# A statically generated blog example using Next.js, Markdown, and TypeScript
 
-- ⚡️ Next.js 13
-- ⚛️ React 18
-- ⛑ TypeScript
-- 📏 ESLint — To find and fix problems in your code
-- 💖 Prettier — Code Formatter for consistent style
-- 🐶 Husky — For running scripts before committing
-- 🚓 Commitlint — To make sure your commit messages follow the convention
-- 🖌 Renovate — To keep your dependencies up to date
-- 🚫 lint-staged — Run ESLint and Prettier against staged Git files
-- 👷 PR Workflow — Run Type Check & Linters on Pull Requests
-- ⚙️ EditorConfig - Consistent coding styles across editors and IDEs
-- 🗂 Path Mapping — Import components or images using the `@` prefix
+This is the existing [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) plus TypeScript.
 
-## Showcase
+This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using Markdown files as the data source.
 
-List of websites that started off with Next.js TypeScript Starter:
+The blog posts are stored in `/_posts` as Markdown files with front matter support. Adding a new Markdown file in there will create a new blog post.
 
-- [dowhile.io](https://dowhile.io)
-- [hygraph.com](https://hygraph.com)
-- [nextlevelweek.com](https://nextlevelweek.com)
-- [rocketseat.com.br](https://www.rocketseat.com.br)
-- [unfork.vercel.app](https://unfork.vercel.app)
-- [cryptools.dev](https://cryptools.dev)
-- [Add yours](https://github.com/jpedroschmitz/typescript-nextjs-starter/edit/main/README.md)
+To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
 
+## Demo
 
-### Scripts
+[https://next-blog-starter.vercel.app/](https://next-blog-starter.vercel.app/)
 
-- `pnpm dev` — Starts the application in development mode at `http://localhost:3000`.
-- `pnpm build` — Creates an optimized production build of your application.
-- `pnpm start` — Starts the application in production mode.
-- `pnpm type-check` — Validate code using TypeScript compiler.
-- `pnpm lint` — Runs ESLint for all files in the `src` directory.
-- `pnpm format` — Runs Prettier for all files in the `src` directory.
+## Deploy your own
 
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/blog-starter)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog-starter&project-name=blog-starter&repository-name=blog-starter)
+
+### Related examples
+
+- [WordPress](/examples/cms-wordpress)
+- [DatoCMS](/examples/cms-datocms)
+- [Sanity](/examples/cms-sanity)
+- [TakeShape](/examples/cms-takeshape)
+- [Prismic](/examples/cms-prismic)
+- [Contentful](/examples/cms-contentful)
+- [Strapi](/examples/cms-strapi)
+- [Agility CMS](/examples/cms-agilitycms)
+- [Cosmic](/examples/cms-cosmic)
+- [ButterCMS](/examples/cms-buttercms)
+- [Storyblok](/examples/cms-storyblok)
+- [GraphCMS](/examples/cms-graphcms)
+- [Kontent](/examples/cms-kontent)
+- [Umbraco Heartcore](/examples/cms-umbraco-heartcore)
+- [Builder.io](/examples/cms-builder-io)
+- [TinaCMS](/examples/cms-tina/)
+- [Enterspeed](/examples/cms-enterspeed)
+
+## How to use
+
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+
+```bash
+npx create-next-app --example blog-starter blog-starter-app
+```
+
+```bash
+yarn create next-app --example blog-starter blog-starter-app
+```
+
+```bash
+pnpm create next-app --example blog-starter blog-starter-app
+```
+
+Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+
+Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+# Notes
+
+`blog-starter` uses [Tailwind CSS](https://tailwindcss.com) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3).
