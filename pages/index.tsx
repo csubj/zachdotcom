@@ -1,8 +1,8 @@
 import Container from "../components/container";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
+import Nav from "../components/nav";
 import Head from "next/head";
-import Post from "../interfaces/post";
 
 export default function Index() {
   return (
@@ -11,9 +11,7 @@ export default function Index() {
         <Head>
           <title>Zach Barner | Film, Photography</title>
         </Head>
-        <Container>
-          <Intro />
-        </Container>
+        <Container></Container>
       </Layout>
     </>
   );
