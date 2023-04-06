@@ -11,7 +11,11 @@ export default function Index() {
         <Head>
           <title>Zach Barner | Film, Photography</title>
         </Head>
-        <Container></Container>
+        <Container>
+          <div className="text-center m-20">
+            Hardness and strength are companions of death.
+          </div>
+        </Container>
       </Layout>
     </>
   );

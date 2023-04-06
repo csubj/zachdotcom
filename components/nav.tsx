@@ -5,10 +5,13 @@ const Nav = () => {
     <nav>
       <div className="pl-10 space-x-5">
         <Link href="/" className="hover:underline">
-          home
+          Home
         </Link>
-        <Link href="/about" className="hover:underline">
-          about
+        <Link href="/bio" className="hover:underline">
+          Bio
+        </Link>
+        <Link href="/films/joy" className="hover:underline">
+          Film
         </Link>
       </div>
     </nav>
