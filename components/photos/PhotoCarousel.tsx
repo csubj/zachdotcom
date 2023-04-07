@@ -11,7 +11,7 @@ const PhotoCarousel = ({ title, imageCount }: Props) => {
       {Array.from(Array(imageCount).keys()).map((i) => (
         <div>
           <img
-            src={`./images/films/${title}/${i}.png`}
+            src={`/images/films/${title}/${i}.png`}
             className=""
             loading={i <= 2 ? "eager" : "lazy"}
           />
