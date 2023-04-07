@@ -1,6 +1,4 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import { useState } from "react";
 
 type Props = {
   title: string;
@@ -13,9 +11,9 @@ const PhotoCarousel = ({ title, imageCount }: Props) => {
       {Array.from(Array(imageCount).keys()).map((i) => (
         <div>
           <img
-            src={`assets/film/${title}/${i}.png`}
+            src={`./images/films/${title}/${i}.png`}
             className=""
-            loading={i <= 1 ? "eager" : "lazy"}
+            loading={i <= 2 ? "eager" : "lazy"}
           />
         </div>
       ))}
