@@ -1,10 +1,8 @@
 const Intro = () => {
   return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-5 mb-16 md:mb-12">
-      <h1 className="text-4xl md:text-4xl font-bold tracking-tighter leading-tight md:pr-4">
-        Zach Barner
-      </h1>
-    </section>
+    <div className="flex-col md:flex-row flex md:justify-between">
+      <h1 className="text-4xl md:text-2xl font-bold">Zach Barner</h1>
+    </div>
   );
 };
 
