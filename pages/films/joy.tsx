@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
 import Container from "../../components/container";
 import Film from "../../components/film/film";
-import PhotoCarousel from "../../components/carousel/Carousel";
+import PhotoCarousel from "../../components/photos/PhotoCarousel";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 function Joy() {

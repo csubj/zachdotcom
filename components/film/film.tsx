@@ -1,6 +1,6 @@
 import FilmNav from "./filmnav";
 import PostTitle from "../post-title";
-import PhotoCarousel from "../carousel/Carousel";
+import PhotoCarousel from "../photos/PhotoCarousel";
 
 type Props = {
   title: string;
