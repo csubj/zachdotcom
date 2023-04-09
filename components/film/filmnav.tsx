@@ -8,7 +8,7 @@ type Props = {
 const FilmNav = ({ titles }: Props) => {
   return (
     <>
-      <div className="flex flex-col space-y-5">
+      <div className="flex flex-col space-y-3 m-3 fixed">
         {titles.map((o) => (
           <Link href={o} className="hover:underline">
             {o}

@@ -5,8 +5,8 @@ function Bio() {
   return (
     <Layout preview={true}>
       <Container>
-        <div className="space-y-2 mt-10">
-          <p>
+        <div className="space-y-2 mt-10 sm:w-full md:w-full">
+          <p className="text-justify">
             Zach Barner is an artist who works in moving images using hybrid
             narrative methods. His recent work looks at play and silence as an
             act of resistance and a means against production, featuring the

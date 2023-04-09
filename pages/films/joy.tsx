@@ -3,26 +3,48 @@ import Container from "../../components/container";
 import Film from "../../components/film/film";
 import PhotoCarousel from "../../components/photos/PhotoCarousel";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import FilmNav from "../../components/film/filmnav";
 
 function Joy() {
   return (
-    <Layout preview={true}>
-      <Container>
-        <Film
-          title="Joy"
-          coverImage={""}
-          embedlink={"https://google.com"}
-          releasedate={"WIP 2023"}
-        ></Film>
-        <ParallaxProvider>
+    <ParallaxProvider>
+      <Layout preview={true}>
+        <FilmNav titles={["joy", "other film"]} />
+        <Container>
+          <Film
+            title="Joy"
+            coverImage={""}
+            embedlink={"https://google.com"}
+            releasedate={"WIP 2023"}
+          ></Film>
+
+          <div>
+            <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+              <iframe
+                src="https://player.vimeo.com/video/787246109?h=b2b80ed480&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                allow="autoplay; fullscreen; picture-in-picture"
+                // allowfullscreen
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  width: "100%",
+                  height: "100%",
+                }}
+                title="a short film about joy (sample)"
+              ></iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+          </div>
+
           <div className="flex flex-row space-x-5">
             <div className=" h-screen w-3/5">
               <Parallax speed={10}>
                 <PhotoCarousel title="Joy" imageCount={7}></PhotoCarousel>
               </Parallax>
             </div>
-            <div className="space-y-3 text-justify indent-8 w-2/5 mr-5">
-              <Parallax speed={-80}>
+            <div className="space-y-3 text-justify indent-8 w-2/5">
+              <Parallax speed={-100} translateY={[0, 10]}>
                 <p>
                   Laith, whose family owns a Middle Eastern restaurant, returns
                   to Chicago from New York City, where he lives as a struggling
@@ -72,9 +94,9 @@ function Joy() {
               </Parallax>
             </div>
           </div>
-        </ParallaxProvider>
-      </Container>
-    </Layout>
+        </Container>
+      </Layout>
+    </ParallaxProvider>
   );
 }
 

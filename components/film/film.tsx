@@ -13,9 +13,7 @@ const Film = ({ title, coverImage, embedlink, releasedate }: Props) => {
   return (
     <>
       <div className="flex flex-row space-x-20 pt-10">
-        <div>
-          <FilmNav titles={["joy", "other film"]} />
-        </div>
+        <div></div>
         <div>
           <PostTitle>{title}</PostTitle>
         </div>
