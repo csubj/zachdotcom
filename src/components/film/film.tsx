@@ -1,6 +1,5 @@
-import FilmNav from "./filmnav";
 import PostTitle from "../post-title";
-import PhotoCarousel from "../photos/PhotoCarousel";
+import FilmNav from "./filmnav";
 
 type Props = {
   title: string;
@@ -11,14 +10,12 @@ type Props = {
 
 const Film = ({ title, coverImage, embedlink, releasedate }: Props) => {
   return (
-    <>
-      <div className="flex flex-row space-x-20 pt-10">
-        <div></div>
-        <div>
-          <PostTitle>{title}</PostTitle>
-        </div>
+    <div className="flex flex-row space-x-20 pt-10">
+      <div></div>
+      <div>
+        <PostTitle>{title}</PostTitle>
       </div>
-    </>
+    </div>
   );
 };
 
