@@ -1,9 +1,6 @@
-import Container from "@/components/container";
-import Layout from "@/components/layout";
-
 export default function Bio() {
   return (
-    <article>
+    <div>
       <p className="text-justify">
         Zach Barner is an artist who works in moving images using hybrid
         narrative methods. His recent work looks at play and silence as an act
@@ -19,6 +16,6 @@ export default function Bio() {
         Ox-bow School of the Art.
       </p>
       <p>He lives and works in Chicago.</p>
-    </article>
+    </div>
   );
 }

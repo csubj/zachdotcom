@@ -1,11 +1,3 @@
-// import Layout from "../../../components/layout";
-// import Container from "../../../components/container";
-// import Film from "../../../components/film/film";
-// import PhotoCarousel from "../../components/photos/PhotoCarousel";
-// import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-// import FilmNav from "../../../components/film/filmnav";
-
-import Container from "@/components/container";
 import Film from "@/components/film/film";
 import FilmNav from "@/components/film/filmnav";
 import PhotoCarousel from "@/components/photos/PhotoCarousel";
@@ -43,7 +35,7 @@ export default function Joy() {
 
       <div className="flex flex-row space-x-5">
         <div className=" h-screen w-3/5">
-          {/* <PhotoCarousel title="Joy" imageCount={7}></PhotoCarousel> */}
+          <PhotoCarousel title="Joy" imageCount={7}></PhotoCarousel>
         </div>
         <div className="space-y-3 text-justify indent-8 w-2/5">
           <p>
