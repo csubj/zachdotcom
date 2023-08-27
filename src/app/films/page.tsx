@@ -1,6 +1,7 @@
 import Film from "@/components/film/film";
 import FilmNav from "@/components/film/filmnav";
 import PhotoCarousel from "@/components/photos/PhotoCarousel";
+import Script from "next/script";
 
 export default function Joy() {
   return (
@@ -30,7 +31,7 @@ export default function Joy() {
             title="a short film about joy (sample)"
           ></iframe>
         </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
+        <Script src="https://player.vimeo.com/api/player.js"></Script>
       </div>
 
       <div className="flex flex-row space-x-5">
@@ -47,9 +48,9 @@ export default function Joy() {
             a Paraguayan photographer visiting Chicago, before attending a film
             workshop. Not wanting to say goodbye, they explore the area
             together, breaking into an empty house where their desire to play
-            takes over. Empowered by each other's willingness to rebel against
-            norms, they connect through the simulation of banal rituals of the
-            everyday.
+            takes over. Empowered by each other`&apos;`s willingness to rebel
+            against norms, they connect through the simulation of banal rituals
+            of the everyday.
           </p>
           <p>
             Told through their two perspectives, the film responds to the

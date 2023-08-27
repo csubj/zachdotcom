@@ -9,8 +9,8 @@ type Props = {
 const PhotoCarousel = ({ title, imageCount }: Props) => {
   return (
     <>
-      {Array.from(Array(imageCount).keys()).map((i) => (
-        <div>
+      {Array.from(Array(imageCount).keys()).map((i, index) => (
+        <div key={index}>
           <Image
             src={`/images/films/${title}/${i}.png`.toLowerCase()}
             className=""
