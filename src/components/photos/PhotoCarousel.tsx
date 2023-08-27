@@ -14,8 +14,6 @@ const PhotoCarousel = ({ title, imageCount }: Props) => {
           <Image
             src={`/images/films/${title}/${i}.png`.toLowerCase()}
             className=""
-            placeholder="blur"
-            blurDataURL="https://placehold.co/600x400/000000/FFF"
             width={700}
             height={475}
             loading={i <= 2 ? "eager" : "lazy"}
