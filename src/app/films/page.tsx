@@ -15,7 +15,7 @@ export default function Joy() {
       ></Film>
 
       <div>
-        <div className="aspect-w-16 aspect-h-9">
+        <div className="aspect-w-16 aspect-h-9 m-3">
           <iframe
             src="https://player.vimeo.com/video/787246109?h=b2b80ed480&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
             width="640"
@@ -28,7 +28,7 @@ export default function Joy() {
         </div>
         {/* <Script src="https://player.vimeo.com/api/player.js"></Script> */}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-20">
         <div>
           <FilmPhoto title="Joy" photonNum={0} />
         </div>
