@@ -19,16 +19,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="container ">
-          <h1 className="text-4xl md:text-2xl font-bold p-5">Zach Barner</h1>
-          <nav>
-            <Link href="/" className="hover:underline flex-1">
+        <div className="container">
+          <h1 className="text-4xl md:text-2xl font-bold">
+            <Link href="/" className="hover:underline p-2">
+              Zach Barner
+            </Link>
+          </h1>
+          <nav className="text-left">
+            <Link href="/" className="hover:underline p-2">
               Home
             </Link>
-            <Link href="/bio" className="hover:underline flex-1">
+            <Link href="/bio" className="hover:underline p-2">
               Bio
             </Link>
-            <Link href="/films" className="hover:underline flex-1">
+            <Link href="/films" className="hover:underline p-2">
               Film
             </Link>
           </nav>

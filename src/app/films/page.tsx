@@ -1,13 +1,12 @@
 import Film from "@/components/film/film";
 import FilmNav from "@/components/film/filmnav";
-import PhotoCarousel from "@/components/photos/PhotoCarousel";
+import FilmPhoto from "@/components/photos/FilmPhoto";
 import Script from "next/script";
 
 export default function Joy() {
   return (
     <div>
-      <FilmNav titles={["joy", "other film"]} />
-
+      {/* <FilmNav titles={["joy", "other film"]} /> */}
       <Film
         title="Joy"
         coverImage={""}
@@ -16,30 +15,25 @@ export default function Joy() {
       ></Film>
 
       <div>
-        <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+        <div className="aspect-w-16 aspect-h-9">
           <iframe
             src="https://player.vimeo.com/video/787246109?h=b2b80ed480&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            width="640"
+            height="360"
+            // frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             // allowfullscreen
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "100%",
-              height: "100%",
-            }}
             title="a short film about joy (sample)"
           ></iframe>
         </div>
-        <Script src="https://player.vimeo.com/api/player.js"></Script>
+        {/* <Script src="https://player.vimeo.com/api/player.js"></Script> */}
       </div>
-
-      <div className="flex flex-row space-x-5">
-        <div className=" h-screen w-3/5">
-          <PhotoCarousel title="Joy" imageCount={7}></PhotoCarousel>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <FilmPhoto title="Joy" photonNum={0} />
         </div>
-        <div className="space-y-3 text-justify indent-8 w-2/5">
-          <p>
+        <div>
+          <p className="text-justify indent-8">
             Laith, whose family owns a Middle Eastern restaurant, returns to
             Chicago from New York City, where he lives as a struggling actor.
             Invited to a deep listening sonic meditation, he travels to the
@@ -48,18 +42,28 @@ export default function Joy() {
             a Paraguayan photographer visiting Chicago, before attending a film
             workshop. Not wanting to say goodbye, they explore the area
             together, breaking into an empty house where their desire to play
-            takes over. Empowered by each other`&apos;`s willingness to rebel
+            takes over. Empowered by each other&apos;s willingness to rebel
             against norms, they connect through the simulation of banal rituals
             of the everyday.
           </p>
-          <p>
+        </div>
+        <div>
+          <FilmPhoto title="Joy" photonNum={1} />
+        </div>{" "}
+        <div>
+          <p className="text-justify indent-8">
             Told through their two perspectives, the film responds to the
             actualities of their individual lives. The film is not scripted and
             is based on a real-life couple, capturing aspects of their
             relationship and re-enacting their lives as they navigate different
             proposals of play, sometimes political, sexual, and quotidian.
           </p>
-          <p>
+        </div>
+        <div>
+          <FilmPhoto title="Joy" photonNum={2} />
+        </div>{" "}
+        <div>
+          <p className="text-justify indent-8">
             A document of the infrathin, as described by Marcel Duchamp, can
             only be defined through examples, exploring where the leftover
             spaces and distance between these ephemeral impressions
@@ -71,7 +75,12 @@ export default function Joy() {
             form echoes fugues and the paintings of Cezanne as a way to see
             multifarious perspectives and observations on the sacred and banal.
           </p>
-          <p>
+        </div>
+        <div>
+          <FilmPhoto title="Joy" photonNum={3} />
+        </div>{" "}
+        <div>
+          <p className="text-justify indent-8">
             The repetition in a film about joy brings attention to the minor
             differences of subjective experience while celebrating a sense of
             sacredness in the everyday. Silence and the wind become stars as
@@ -81,6 +90,9 @@ export default function Joy() {
             were seen moving. How do we allow trees to be trees again?
           </p>
         </div>
+        <div>
+          <FilmPhoto title="Joy" photonNum={4} />
+        </div>{" "}
       </div>
     </div>
   );
