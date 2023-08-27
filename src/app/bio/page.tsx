@@ -1,7 +1,7 @@
 export default function Bio() {
   return (
-    <div className="text-center m-20">
-      <p className="text-justify">
+    <div className="text-center m-5 md:m-20">
+      <p className="text-justify  text-sm sm:text-lg">
         Zach Barner is an artist who works in moving images using hybrid
         narrative methods. His recent work looks at play and silence as an act
         of resistance and a means against production, featuring the wind, chance
@@ -16,7 +16,9 @@ export default function Bio() {
         Ox-bow School of the Art.
       </p>
       <br />
-      <p>He lives and works in Chicago.</p>
+      <p className="text-justify  text-sm sm:text-lg">
+        He lives and works in Chicago.
+      </p>
     </div>
   );
 }

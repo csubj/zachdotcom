@@ -28,12 +28,12 @@ export default function Joy() {
         </div>
         {/* <Script src="https://player.vimeo.com/api/player.js"></Script> */}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-5 sm:p-20">
         <div>
           <FilmPhoto title="Joy" photonNum={0} />
         </div>
         <div>
-          <p className="text-justify indent-8">
+          <p className="text-justify indent-8 text-sm md:text-lg">
             Laith, whose family owns a Middle Eastern restaurant, returns to
             Chicago from New York City, where he lives as a struggling actor.
             Invited to a deep listening sonic meditation, he travels to the
@@ -51,7 +51,7 @@ export default function Joy() {
           <FilmPhoto title="Joy" photonNum={1} />
         </div>{" "}
         <div>
-          <p className="text-justify indent-8">
+          <p className="text-justify indent-8 text-sm md:text-lg">
             Told through their two perspectives, the film responds to the
             actualities of their individual lives. The film is not scripted and
             is based on a real-life couple, capturing aspects of their
@@ -63,7 +63,7 @@ export default function Joy() {
           <FilmPhoto title="Joy" photonNum={2} />
         </div>{" "}
         <div>
-          <p className="text-justify indent-8">
+          <p className="text-justify indent-8 text-sm md:text-lg">
             A document of the infrathin, as described by Marcel Duchamp, can
             only be defined through examples, exploring where the leftover
             spaces and distance between these ephemeral impressions
@@ -80,7 +80,7 @@ export default function Joy() {
           <FilmPhoto title="Joy" photonNum={3} />
         </div>{" "}
         <div>
-          <p className="text-justify indent-8">
+          <p className="text-justify indent-8 text-sm md:text-lg">
             The repetition in a film about joy brings attention to the minor
             differences of subjective experience while celebrating a sense of
             sacredness in the everyday. Silence and the wind become stars as
@@ -92,7 +92,13 @@ export default function Joy() {
         </div>
         <div>
           <FilmPhoto title="Joy" photonNum={4} />
-        </div>{" "}
+        </div>
+        <div>
+          <FilmPhoto title="Joy" photonNum={5} />
+        </div>
+        <div>
+          <FilmPhoto title="Joy" photonNum={6} />
+        </div>
       </div>
     </div>
   );
