@@ -29,7 +29,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "prettier": "3.0.2"
+    "prettier": "3.0.3"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
