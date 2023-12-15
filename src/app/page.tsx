@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 
-export const myFont = localFont({
+const myFont = localFont({
   src: "./fonts/another.ttf",
   display: "swap",
 });
