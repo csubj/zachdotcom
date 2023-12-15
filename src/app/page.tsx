@@ -8,7 +8,7 @@ const myFont = localFont({
 export default function Page() {
   return (
     <div
-      className={`${myFont.className} container mx-auto w-5/6 mt-20  indent-8 lg:indent-16 lg:text-4xl text-2xl leading-5 sm:leading-6`}
+      className={`${myFont.className} container mx-auto w-5/6 md:w-1/2 mt-20 indent-8 lg:indent-16 text-2xl leading-5 sm:leading-6`}
     >
       <div>
         <p>
