@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -10,6 +11,11 @@ export const metadata: Metadata = {
   title: "Zach Barner | Film, Photography",
   description: "Professional Site",
 };
+
+const myFont = localFont({
+  src: "./fonts/JMH Typewriter-Black.ttf",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
