@@ -7,8 +7,17 @@ on:
 
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deployment:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,12 +29,27 @@ jobs:
           node-version: "lts/*"
           cache: "npm"
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       - name: Build
         run: |
           npm i
           npm run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./out
+          path: ./out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
