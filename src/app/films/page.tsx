@@ -15,7 +15,7 @@ export default function Joy() {
       ></Film>
 
       <div>
-        <div className="aspect-w-16 aspect-h-9 m-3">
+        <div className="aspect-video m-3">
           <iframe
             src="https://player.vimeo.com/video/787246109?h=b2b80ed480&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
             width="640"
