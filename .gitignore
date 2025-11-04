@@ -1,35 +1,78 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# PNPM
+.pnpm-debug.log*
+.pnpm-store
 
-# testing
-/coverage
+# Optional caches for speedier installs
+.cache
+.vite
+*.tsbuildinfo
 
-# next.js
-/.next/
-/out/
+# Next.js
+.next/
+out/
+.vercel
+vercel/
+server/
+dist/
+build/
+node_modules/
 
-# production
-/build
+# Typescript
+*.tsbuildinfo
+*.tscache
+tsconfig.tsbuildinfo
+*.d.ts
 
-# misc
+# Testing
+coverage/
+.nyc_output
+
+# OS and editor files
 .DS_Store
-*.pem
+Thumbs.db
+.idea/
+.vscode/
+*.swp
 
-# debug
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
 
-# local env files
-.env*.local
+# Env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.development
+.env.test
+.env.production
 
-# vercel
-.vercel
+# Misc/other
+*.local
+*.log
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Output of 'next export'
+out/
+
+# Ignore build outputs and lockfile backups
+*.tgz
+*.lockbkp
+
+# Ignore now.sh deployments
+.now
+
+# Ignore playground, temp files
+playground/
+temp/
+tmp/
+
+# Ignore analytics files
+*.analytics.json
+
+
+
+
