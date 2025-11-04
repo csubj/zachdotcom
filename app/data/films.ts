@@ -16,7 +16,7 @@ export const films: Film[] = [
     slug: 'joy',
     title: 'Joy',
     year: 2023,
-    shortDescription: 'A poignant exploration of finding happiness in unexpected places, following one woman\'s journey through loss and rediscovery.',
+    shortDescription: 'Laith returns to Chicago from New York City, where he lives as a struggling actor. He travels to the Indiana Dunes where he meets Arturo.',
     longDescription: `
                 Laith, whose family owns a Middle Eastern restaurant, returns to
                 Chicago from New York City, where he lives as a struggling

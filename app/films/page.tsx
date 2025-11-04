@@ -6,7 +6,7 @@ export default function Films() {
   return (
     <div className="min-h-screen py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-bold mb-12 text-gray-900 dark:text-gray-100">
+        <h1 className="text-5xl font-bold mb-12">
           Films
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
