@@ -80,6 +80,8 @@ export default async function FilmDetail({ params }: { params: Promise<{ slug: s
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    placeholder={film.imageBlurs?.[index] ? "blur" : "empty"}
+                    blurDataURL={film.imageBlurs?.[index]}
                   />
                 </div>
               ))}
