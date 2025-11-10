@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import { films, getFilmBySlug } from '@/app/data/films';
+import { InteractiveGallery } from './interactive-gallery';
 
 export async function generateStaticParams() {
   return films.map((film) => ({
@@ -64,29 +64,7 @@ export default async function FilmDetail({ params }: { params: Promise<{ slug: s
 
         {/* Image Gallery */}
         {film.images.length > 0 && (
-          <div>
-            <h2 className="text-3xl font-semibold mb-6">
-              Stills
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {film.images.map((image, index) => (
-                <div
-                  key={index}
-                  className="relative aspect-video w-full rounded-lg overflow-hidden"
-                >
-                  <Image
-                    src={image}
-                    alt={`${film.title} still ${index + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    placeholder={film.imageBlurs?.[index] ? "blur" : "empty"}
-                    blurDataURL={film.imageBlurs?.[index]}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <InteractiveGallery images={film.images} filmTitle={film.title} />
         )}
       </div>
     </div>

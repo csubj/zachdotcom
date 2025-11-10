@@ -8,17 +8,8 @@ export default function Bio() {
       <div className="block md:hidden h-8" /> {/* Adds vertical space on mobile/smaller screens */}
           <div className="hidden md:block" style={{ minHeight: '2rem' }} /> {/* Adds vertical space on md+ screens */}
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="relative aspect-[3/4] w-full bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden">
+        <div className="grid md:grid-cols-1 gap-12 items-start">
 
-            <Image
-              src="/images/portrait.jpeg"
-              alt="Zach Barner"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
 
           <div className="space-y-6">
             <p className="text-lg leading-relaxed">
