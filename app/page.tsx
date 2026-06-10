@@ -1,5 +1,5 @@
 import localFont from 'next/font/local';
-import { Box, Container, Flex } from '@radix-ui/themes';
+import { Box, Flex } from '@radix-ui/themes';
 
 const myFont = localFont({
   src: './fonts/another.ttf',
@@ -11,15 +11,21 @@ const myFont = localFont({
 
 export default function Home() {
   return (
-    <Flex align="center" justify="center" px="4" style={{ minHeight: 'calc(100vh - 5rem)' }}>
-      <Container size="2">
+    <Flex
+      align="center"
+      justify="center"
+      px="4"
+      width="100%"
+      style={{ minHeight: 'calc(100vh - 5rem)', minWidth: 0 }}
+    >
+      <Box width="100%" style={{ maxWidth: '42.5rem' }}>
         <Box
-          className={myFont.className}
+          className={`${myFont.className} home-prose`}
           style={{
-            textIndent: '2rem',
-            fontSize: 'clamp(1.25rem, 2.5vw, 1.875rem)',
+            fontSize: 'clamp(1.125rem, 2.5vw, 1.875rem)',
             lineHeight: 1.25,
             textAlign: 'center',
+            overflowWrap: 'break-word',
           }}
         >
           <Flex direction="column" gap="4">
@@ -41,12 +47,12 @@ export default function Home() {
               Filmmaker so that we know his cinematograph is a menace to the cinema;
               may his cinematograph be menacing, be a menace.
             </p>
-            <Box asChild pr="9" style={{ textAlign: 'right' }}>
+            <Box asChild pr={{ initial: '4', sm: '9' }} style={{ textAlign: 'right' }}>
               <p>J-M.S.</p>
             </Box>
           </Flex>
         </Box>
-      </Container>
+      </Box>
     </Flex>
   );
 }
