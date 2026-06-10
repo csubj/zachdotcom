@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { ArrowLeftIcon } from '@radix-ui/react-icons';
+import { Box, Container, Flex, Heading, Link as RadixLink, Text } from '@radix-ui/themes';
 import { films, getFilmBySlug } from '@/app/data/films';
 import { InteractiveGallery } from './interactive-gallery';
 
@@ -18,56 +20,63 @@ export default async function FilmDetail({ params }: { params: Promise<{ slug: s
   }
 
   return (
-    <div className="min-h-screen py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <Link 
-          href="/films"
-          className="inline-flex items-center mb-8 transition-colors"
-        >
-          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Films
-        </Link>
+    <Box py="9" px="4">
+      <Container size="4">
+        <RadixLink asChild size="2" mb="5" style={{ display: 'inline-flex' }}>
+          <Link href="/films">
+            <Flex align="center" gap="1">
+              <ArrowLeftIcon />
+              Back to Films
+            </Flex>
+          </Link>
+        </RadixLink>
 
-        <div className="mb-8">
-          <div className="flex items-baseline justify-between mb-4">
-            <h1 className="text-5xl font-bold">
-              {film.title}
-            </h1>
-            <span className="text-xl">
+        <Box mb="5">
+          <Flex align="baseline" justify="between" gap="4" mb="2">
+            <Heading size="8">{film.title}</Heading>
+            <Text size="4" color="gray">
               {film.year}
-            </span>
-          </div>
-        </div>
+            </Text>
+          </Flex>
+          {film.specs && (
+            <Text size="3" color="gray">
+              {film.specs}
+            </Text>
+          )}
+        </Box>
 
-        {/* Vimeo Embed */}
-        <div className="mb-12">
-          <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
-            <iframe
-              src={`https://player.vimeo.com/video/${film.vimeoId}?title=0&byline=0&portrait=0`}
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              title={film.title}
-            />
-          </div>
-        </div>
+        {film.vimeoId && (
+          <Box mb="6">
+            <Box position="relative" width="100%" style={{ paddingTop: '56.25%' }}>
+              <iframe
+                src={`https://player.vimeo.com/video/${film.vimeoId}?title=0&byline=0&portrait=0`}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: 'var(--radius-3)',
+                  border: 'none',
+                }}
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title={film.title}
+              />
+            </Box>
+          </Box>
+        )}
 
-        {/* Description */}
-        <div className="mb-12 prose prose-lg max-w-none">
-          <div className="leading-relaxed whitespace-pre-line">
+        <Box mb="6" mx="auto" style={{ maxWidth: '42rem' }}>
+          <Text size="3" align="center" style={{ lineHeight: 1.7, whiteSpace: 'pre-line' }}>
             {film.longDescription}
-          </div>
-        </div>
+          </Text>
+        </Box>
 
-        {/* Image Gallery */}
         {film.images.length > 0 && (
           <InteractiveGallery images={film.images} filmTitle={film.title} />
         )}
-      </div>
-    </div>
+      </Container>
+    </Box>
   );
 }
-

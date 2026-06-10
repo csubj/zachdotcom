@@ -1,52 +1,48 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Box, Card, Container, Flex, Grid, Heading, Inset, Text } from '@radix-ui/themes';
 import { films } from '../data/films';
 
 export default function Films() {
   return (
-    <div className="min-h-screen py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-bold mb-12">
+    <Box py="9" px="4">
+      <Container size="4">
+        <Heading size="8" mb="6">
           Films
-        </h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </Heading>
+        <Grid columns={{ initial: '1', md: '2', lg: '3' }} gap="5">
           {films.map((film) => (
-            <Link
-              key={film.id}
-              href={`/films/${film.slug}`}
-              className="group"
-            >
-              <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                <div className="relative aspect-video w-full bg-gray-200 dark:bg-gray-800">
-                  <Image
-                    src={film.thumbnail}
-                    alt={film.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    placeholder={film.thumbnailBlur ? "blur" : "empty"}
-                    blurDataURL={film.thumbnailBlur}
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-baseline justify-between mb-3">
-                    <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
-                      {film.title}
-                    </h2>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
+            <Link key={film.id} href={`/films/${film.slug}`} style={{ textDecoration: 'none' }}>
+              <Card size="2" style={{ height: '100%' }}>
+                <Inset clip="padding-box" side="top" pb="current">
+                  <Box position="relative" style={{ aspectRatio: '16 / 9' }}>
+                    <Image
+                      src={film.thumbnail}
+                      alt={film.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      placeholder={film.thumbnailBlur ? 'blur' : 'empty'}
+                      blurDataURL={film.thumbnailBlur}
+                    />
+                  </Box>
+                </Inset>
+                <Flex direction="column" gap="2" p="4">
+                  <Flex align="baseline" justify="between" gap="2">
+                    <Heading size="4">{film.title}</Heading>
+                    <Text size="1" color="gray">
                       {film.year}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    </Text>
+                  </Flex>
+                  <Text size="2" color="gray">
                     {film.shortDescription}
-                  </p>
-                </div>
-              </div>
+                  </Text>
+                </Flex>
+              </Card>
             </Link>
           ))}
-        </div>
-      </div>
-    </div>
+        </Grid>
+      </Container>
+    </Box>
   );
 }
-
