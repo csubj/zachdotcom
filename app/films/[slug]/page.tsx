@@ -32,9 +32,15 @@ export default async function FilmDetail({ params }: { params: Promise<{ slug: s
         </RadixLink>
 
         <Box mb="5">
-          <Flex align="baseline" justify="between" gap="4" mb="2">
+          <Flex
+            align="baseline"
+            justify="between"
+            gap="4"
+            mb="2"
+            wrap="wrap"
+          >
             <Heading size="8">{film.title}</Heading>
-            <Text size="4" color="gray">
+            <Text size="4" color="gray" style={{ flexShrink: 0 }}>
               {film.year}
             </Text>
           </Flex>

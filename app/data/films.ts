@@ -1,3 +1,10 @@
+export interface FilmImage {
+  src: string;
+  width: number;
+  height: number;
+  blur?: string;
+}
+
 export interface Film {
   id: string;
   slug: string;
@@ -9,8 +16,7 @@ export interface Film {
   thumbnail: string;
   thumbnailBlur?: string;
   vimeoId?: string;
-  images: string[];
-  imageBlurs?: string[];
+  images: FilmImage[];
 }
 
 export const films: Film[] = [
@@ -31,22 +37,13 @@ The repetition in a film about joy brings attention to the minor differences of 
     thumbnailBlur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
     vimeoId: '787246109',
     images: [
-      '/images/films/joy/0.png',
-      '/images/films/joy/1.png',
-      '/images/films/joy/2.png',
-      '/images/films/joy/3.png',
-      '/images/films/joy/4.png',
-      '/images/films/joy/5.png',
-      '/images/films/joy/6.png',
-    ],
-    imageBlurs: [
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
+      { src: '/images/films/joy/0.png', width: 3840, height: 2160, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
+      { src: '/images/films/joy/1.png', width: 3840, height: 2160, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
+      { src: '/images/films/joy/2.png', width: 3840, height: 2160, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
+      { src: '/images/films/joy/3.png', width: 3840, height: 2160, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
+      { src: '/images/films/joy/4.png', width: 3840, height: 2160, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
+      { src: '/images/films/joy/5.png', width: 3840, height: 2160, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
+      { src: '/images/films/joy/6.png', width: 3840, height: 2160, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
     ],
   },
   {
@@ -54,7 +51,7 @@ The repetition in a film about joy brings attention to the minor differences of 
     slug: 'spinozas-rainbow',
     title: "Spinoza's Rainbow",
     year: 2026,
-    specs: '1 / 16mm / Color / 3:47',
+    specs: '16mm / Color / 3:47',
     shortDescription:
       "A prelude introduces the algebraic calculation of a rainbow's arc, reputed to be by Baruch Spinoza and dating back to 1687.",
     longDescription: `A prelude introduces the algebraic calculation of a rainbow's arc, reputed to be by Baruch Spinoza and dating back to 1687. A shadow observes itself, connecting two points. Through a series of single, double, and triple exposures, the three color records of 16mm film emulsion converge and diverge. Breath becomes a source of movement, and language transforms into frequencies, as if they could become light, through the recitation of three poems by Friedrich Nietzsche from 1887.`,
@@ -62,14 +59,9 @@ The repetition in a film about joy brings attention to the minor differences of 
     thumbnailBlur:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
     images: [
-      '/images/films/rainbow/still-1.png',
-      '/images/films/rainbow/still-2.png',
-      '/images/films/rainbow/still-3.png',
-    ],
-    imageBlurs: [
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==',
+      { src: '/images/films/rainbow/still-1.png', width: 3000, height: 2240, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
+      { src: '/images/films/rainbow/still-2.png', width: 3000, height: 2240, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
+      { src: '/images/films/rainbow/still-3.png', width: 3000, height: 2240, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
     ],
   },
 ];

@@ -15,7 +15,10 @@ export default function Films() {
             <Link key={film.id} href={`/films/${film.slug}`} style={{ textDecoration: 'none' }}>
               <Card size="2" style={{ height: '100%' }}>
                 <Inset clip="padding-box" side="top" pb="current">
-                  <Box position="relative" style={{ aspectRatio: '16 / 9' }}>
+                  <Box
+                    width="100%"
+                    style={{ position: 'relative', paddingTop: '56.25%' }}
+                  >
                     <Image
                       src={film.thumbnail}
                       alt={film.title}

@@ -39,11 +39,11 @@ export function FilmsNavLink({ size = '2' }: FilmsNavLinkProps) {
               <NextLink href={`/films/${film.slug}`}>
                 <Flex gap="3" align="center">
                   <Box
-                    position="relative"
                     style={{
+                      position: 'relative',
                       width: 96,
                       flexShrink: 0,
-                      aspectRatio: '16 / 9',
+                      paddingTop: '54px',
                       borderRadius: 'var(--radius-2)',
                       overflow: 'hidden',
                     }}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 import {
   ChevronLeftIcon,
@@ -9,9 +9,10 @@ import {
   MagnifyingGlassIcon,
 } from '@radix-ui/react-icons';
 import { Box, Dialog, Flex, Grid, Heading, IconButton, Text, VisuallyHidden } from '@radix-ui/themes';
+import type { FilmImage } from '@/app/data/films';
 
 interface InteractiveGalleryProps {
-  images: string[];
+  images: FilmImage[];
   filmTitle: string;
 }
 
@@ -24,13 +25,25 @@ export function InteractiveGallery({ images, filmTitle }: InteractiveGalleryProp
     setOpen(true);
   };
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentIndex((index) => Math.min(index + 1, images.length - 1));
-  };
+  }, [images.length]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setCurrentIndex((index) => Math.max(index - 1, 0));
-  };
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowRight') nextImage();
+      if (event.key === 'ArrowLeft') prevImage();
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [open, nextImage, prevImage]);
 
   return (
     <>
@@ -38,35 +51,45 @@ export function InteractiveGallery({ images, filmTitle }: InteractiveGalleryProp
         <Heading size="6" mb="4">
           Stills
         </Heading>
-        <Grid columns={{ initial: '1', md: '2' }} gap="4">
+        <Grid columns={{ initial: '1', md: '2' }} gap="4" width="100%" align="start">
           {images.map((image, index) => (
             <Box
-              key={image}
-              position="relative"
+              key={image.src}
+              width="100%"
               className="group"
-              style={{ aspectRatio: '16 / 9', cursor: 'pointer', borderRadius: 'var(--radius-3)', overflow: 'hidden' }}
+              style={{ cursor: 'pointer' }}
               onClick={() => openAt(index)}
             >
-              <Image
-                src={image}
-                alt={`${filmTitle} still ${index + 1}`}
-                fill
-                style={{ objectFit: 'cover' }}
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <Flex
-                align="center"
-                justify="center"
-                position="absolute"
-                inset="0"
-                className="bg-transparent transition-colors group-hover:bg-black/20"
+              <Box
+                style={{
+                  position: 'relative',
+                  borderRadius: 'var(--radius-3)',
+                  overflow: 'hidden',
+                }}
               >
-                <MagnifyingGlassIcon
-                  width={48}
-                  height={48}
-                  className="opacity-0 transition-opacity group-hover:opacity-100"
+                <Image
+                  src={image.src}
+                  alt={`${filmTitle} still ${index + 1}`}
+                  width={image.width}
+                  height={image.height}
+                  loading="eager"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  placeholder={image.blur ? 'blur' : 'empty'}
+                  blurDataURL={image.blur}
                 />
-              </Flex>
+                <Flex
+                  align="center"
+                  justify="center"
+                  className="pointer-events-none absolute inset-0 bg-transparent transition-colors group-hover:bg-black/20"
+                >
+                  <MagnifyingGlassIcon
+                    width={48}
+                    height={48}
+                    className="opacity-40 transition-opacity group-hover:opacity-100 md:opacity-0"
+                  />
+                </Flex>
+              </Box>
             </Box>
           ))}
         </Grid>
@@ -78,7 +101,7 @@ export function InteractiveGallery({ images, filmTitle }: InteractiveGalleryProp
           style={{
             maxHeight: '95vh',
             padding: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.95)',
+            backgroundColor: 'transparent',
             overflow: 'hidden',
           }}
         >
@@ -128,17 +151,33 @@ export function InteractiveGallery({ images, filmTitle }: InteractiveGalleryProp
           )}
 
           <Box
-            position="relative"
             width="100%"
-            style={{ height: 'min(85vh, 900px)', padding: '0 4rem' }}
+            style={{
+              position: 'relative',
+              height: 'min(90vh, 900px)',
+              overflow: 'hidden',
+            }}
           >
             <Image
-              src={images[currentIndex]}
-              alt={`${filmTitle} still ${currentIndex + 1}`}
+              src={images[currentIndex].src}
+              alt=""
+              aria-hidden
               fill
-              style={{ objectFit: 'contain' }}
               sizes="100vw"
               priority
+              style={{
+                objectFit: 'cover',
+                filter: 'blur(32px) brightness(0.6)',
+                transform: 'scale(1.15)',
+              }}
+            />
+            <Image
+              src={images[currentIndex].src}
+              alt={`${filmTitle} still ${currentIndex + 1}`}
+              fill
+              sizes="100vw"
+              priority
+              style={{ objectFit: 'contain', zIndex: 1 }}
             />
           </Box>
 
