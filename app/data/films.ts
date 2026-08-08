@@ -49,8 +49,8 @@ The repetition in a film about joy brings attention to the minor differences of 
   },
   {
     id: '2',
-    slug: 'spinozas-rainbow',
-    title: "Spinoza's Rainbow",
+    slug: 'spinozas-rainbow-1',
+    title: "Spinoza's Rainbow 1",
     year: 2026,
     specs: "3'47\" / Color / 16mm / Digital Transfer / Stereo",
     shortDescription:
