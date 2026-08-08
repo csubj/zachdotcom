@@ -19,7 +19,7 @@ export interface Film {
   images: FilmImage[];
 }
 
-export const films: Film[] = [
+const filmsData: Film[] = [
   {
     id: '1',
     slug: 'joy',
@@ -65,6 +65,12 @@ The repetition in a film about joy brings attention to the minor differences of 
     ],
   },
 ];
+
+/** Films ordered newest-first by year, then by position in filmsData. */
+export const films: Film[] = filmsData
+  .map((film, index) => ({ film, index }))
+  .sort((a, b) => b.film.year - a.film.year || a.index - b.index)
+  .map(({ film }) => film);
 
 export function getFilmBySlug(slug: string): Film | undefined {
   return films.find(film => film.slug === slug);
