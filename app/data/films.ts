@@ -17,6 +17,7 @@ export interface Film {
   thumbnailBlur?: string;
   vimeoId?: string;
   images: FilmImage[];
+  screenings?: string[];
 }
 
 const filmsData: Film[] = [
@@ -51,7 +52,7 @@ The repetition in a film about joy brings attention to the minor differences of 
     slug: 'spinozas-rainbow',
     title: "Spinoza's Rainbow",
     year: 2026,
-    specs: '16mm / Color / 3:47',
+    specs: "3'47\" / Color / 16mm / Digital Transfer / Stereo",
     shortDescription:
       "A prelude introduces the algebraic calculation of a rainbow's arc, reputed to be by Baruch Spinoza and dating back to 1687.",
     longDescription: `A prelude introduces the algebraic calculation of a rainbow's arc, reputed to be by Baruch Spinoza and dating back to 1687. A shadow observes itself, connecting two points. Through a series of single, double, and triple exposures, the three color records of 16mm film emulsion converge and diverge. Breath becomes a source of movement, and language transforms into frequencies, as if they could become light, through the recitation of three poems by Friedrich Nietzsche from 1887.`,
@@ -63,6 +64,7 @@ The repetition in a film about joy brings attention to the minor differences of 
       { src: '/images/films/rainbow/still-2.png', width: 3000, height: 2240, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
       { src: '/images/films/rainbow/still-3.png', width: 3000, height: 2240, blur: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==' },
     ],
+    screenings: ['Antimatter [Media Art], Victoria, British Columbia'],
   },
 ];
 

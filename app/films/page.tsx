@@ -31,7 +31,7 @@ export default function Films() {
                   </Box>
                 </Inset>
                 <Flex direction="column" gap="2" p="4">
-                  <Flex align="baseline" justify="between" gap="2">
+                  <Flex align="baseline" gap="2">
                     <Heading size="4">{film.title}</Heading>
                     <Text size="1" color="gray">
                       {film.year}

@@ -32,13 +32,7 @@ export default async function FilmDetail({ params }: { params: Promise<{ slug: s
         </RadixLink>
 
         <Box mb="5">
-          <Flex
-            align="baseline"
-            justify="between"
-            gap="4"
-            mb="2"
-            wrap="wrap"
-          >
+          <Flex align="baseline" gap="3" mb="2" wrap="wrap">
             <Heading size="8">{film.title}</Heading>
             <Text size="4" color="gray" style={{ flexShrink: 0 }}>
               {film.year}
@@ -78,6 +72,23 @@ export default async function FilmDetail({ params }: { params: Promise<{ slug: s
             {film.longDescription}
           </Text>
         </Box>
+
+        {film.screenings && film.screenings.length > 0 && (
+          <Box mb="6" mx="auto" style={{ maxWidth: '42rem' }}>
+            <Heading size="3" mb="1">
+              Screenings
+            </Heading>
+            <Box asChild>
+              <ul style={{ margin: 0, paddingLeft: '1.25rem' }}>
+                {film.screenings.map((screening) => (
+                  <Text asChild key={screening} size="3" color="gray">
+                    <li style={{ marginBottom: '0.5rem' }}>{screening}</li>
+                  </Text>
+                ))}
+              </ul>
+            </Box>
+          </Box>
+        )}
 
         {film.images.length > 0 && (
           <InteractiveGallery images={film.images} filmTitle={film.title} />
