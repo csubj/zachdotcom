@@ -67,14 +67,14 @@ export default async function FilmDetail({ params }: { params: Promise<{ slug: s
           </Box>
         )}
 
-        <Box mb="6" mx="auto" style={{ maxWidth: '42rem' }}>
-          <Text size="3" align="center" style={{ lineHeight: 1.7, whiteSpace: 'pre-line' }}>
+        <Box mb="6" style={{ maxWidth: '42rem' }}>
+          <Text size="3" align="left" style={{ lineHeight: 1.7, whiteSpace: 'pre-line' }}>
             {film.longDescription}
           </Text>
         </Box>
 
         {film.screenings && film.screenings.length > 0 && (
-          <Box mb="6" mx="auto" style={{ maxWidth: '42rem' }}>
+          <Box mb="6" style={{ maxWidth: '42rem' }}>
             <Heading size="3" mb="1">
               Screenings
             </Heading>
